@@ -22,3 +22,36 @@ class TestMap(TestCase):
         testmap = GameMap()
         total_positions = testmap.get_total_positions()
         self.assertEqual(total_positions, 100)
+    
+    def test_is_valid_position_good(self):
+        # Testing lower limit boundary
+        testmap = GameMap()
+        pos = Position(0, 0)
+        self.assertTrue(testmap.is_valid_position(pos))
+    
+    def test_is_valid_position_good_2(self):
+        # Testing upper limit boundary
+        testmap = GameMap()
+        pos = Position(testmap.size[0], testmap.size[1])
+
+    def test_is_valid_position_fail_x(self):
+        testmap = GameMap()
+        # Size exceeds the bound by 1.
+        pos = Position(testmap.size[0], 0)
+        self.assertFalse(testmap.is_valid_position(pos))
+    
+    def test_is_valid_position_fail_y(self):
+        testmap = GameMap()
+        # Size exceeds the bound by 1.
+        pos = Position(0, testmap.size[1])
+        self.assertFalse(testmap.is_valid_position(pos))
+    
+    def test_is_valid_position_fail_neg_x(self):
+        testmap = GameMap()
+        pos = Position(-1, 0)
+        self.assertFalse(testmap.is_valid_position(pos))
+
+    def test_is_valid_position_fail_neg_y(self):
+        testmap = GameMap()
+        pos = Position(0, -1)
+        self.assertFalse(testmap.is_valid_position(pos))

@@ -41,7 +41,11 @@ class GameMap:
         return self.position_count
 
     def is_valid_position(self, position: Position) -> bool:
-        pass
+        x, y = position.coordinates
+        if x in range(self.size[0]) and y in range(self.size[1]):
+            return True
+        else:
+            return False
 
     def calculate_position(
         self, starting_position: Position, direction: Direction
