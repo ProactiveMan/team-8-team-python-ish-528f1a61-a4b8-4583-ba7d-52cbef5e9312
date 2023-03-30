@@ -55,3 +55,15 @@ class TestMap(TestCase):
         testmap = GameMap()
         pos = Position(0, -1)
         self.assertFalse(testmap.is_valid_position(pos))
+    
+    def test_calculate_position_valid_1(self):
+        pass
+
+    def test_calculate_position_valid_2(self):
+        pass
+
+    def test_calculate_position_edge_1(self):
+        pass
+
+    def test_calculate_position_edge_2(self):
+        pass
