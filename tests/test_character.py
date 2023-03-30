@@ -25,7 +25,13 @@ class TestCharacter(TestCase):
         FakeMap = GameMap()
         FakeCharacter.enter_map(FakeMap)
         pos = FakeCharacter.get_position()
-        print(pos)
         #Should be born on 0,0
         self.assertEqual(Position(0,0), pos)
+
+    def test_get_position(self):
+        FakeCharacter = Character(name="Shorsey")
+        FakeMap = GameMap()
+        FakeCharacter.enter_map(FakeMap)
+        pos = FakeCharacter.get_position()
+        self.assertIsInstance(pos,Position)
     
