@@ -1,6 +1,6 @@
 from unittest import TestCase
 from typing import List
-from levelup.map import GameMap
+from levelup.map import GameMap, Direction
 from levelup.position import Position
 
 
@@ -56,14 +56,50 @@ class TestMap(TestCase):
         pos = Position(0, -1)
         self.assertFalse(testmap.is_valid_position(pos))
     
-    def test_calculate_position_valid_1(self):
-        pass
+    def test_calculate_position_valid_N(self):
+        testmap = GameMap()
+        pos = Position(5, 5)
+        expected_pos = Position(5, 4)
+        move_dir = Direction.NORTH
+        end_pos = testmap.calculate_position(pos, move_dir)
+        self.assertEqual(end_pos, expected_pos)
 
-    def test_calculate_position_valid_2(self):
-        pass
+    def test_calculate_position_valid_E(self):
+        testmap = GameMap()
+        pos = Position(5, 5)
+        expected_pos = Position(6, 5)
+        move_dir = Direction.EAST
+        end_pos = testmap.calculate_position(pos, move_dir)
+        self.assertEqual(end_pos, expected_pos)
+    
+    def test_calculate_position_valid_S(self):
+        testmap = GameMap()
+        pos = Position(5, 5)
+        expected_pos = Position(5, 6)
+        move_dir = Direction.SOUTH
+        end_pos = testmap.calculate_position(pos, move_dir)
+        self.assertEqual(end_pos, expected_pos)
+    
+    def test_calculate_position_valid_W(self):
+        testmap = GameMap()
+        pos = Position(5, 5)
+        expected_pos = Position(4, 5)
+        move_dir = Direction.WEST
+        end_pos = testmap.calculate_position(pos, move_dir)
+        self.assertEqual(end_pos, expected_pos)
 
     def test_calculate_position_edge_1(self):
-        pass
+        testmap = GameMap()
+        pos = Position(9, 9)
+        expected_pos = Position(9, 9)
+        move_dir = Direction.EAST
+        end_pos = testmap.calculate_position(pos, move_dir)
+        self.assertEqual(end_pos, expected_pos)
 
     def test_calculate_position_edge_2(self):
-        pass
+        testmap = GameMap()
+        pos = Position(0, 0)
+        expected_pos = Position(0, 0)
+        move_dir = Direction.NORTH
+        end_pos = testmap.calculate_position(pos, move_dir)
+        self.assertEqual(end_pos, expected_pos)

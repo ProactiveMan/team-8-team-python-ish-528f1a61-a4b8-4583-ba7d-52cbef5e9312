@@ -50,4 +50,28 @@ class GameMap:
     def calculate_position(
         self, starting_position: Position, direction: Direction
     ) -> Position:
-        pass
+        x, y = starting_position.coordinates
+        if direction is Direction.NORTH:
+            new_y = y - 1
+            if new_y >= self.size[1] or new_y <=0:
+                return starting_position
+            else:
+                return Position(x, new_y)
+        elif direction is Direction.SOUTH:
+            new_y = y + 1
+            if new_y >= self.size[1] or new_y <=0:
+                return starting_position
+            else:
+                return Position(x, new_y)
+        elif direction is Direction.EAST:
+            new_x = x + 1
+            if new_x >= self.size[0] or new_x <=0:
+                return starting_position
+            else:
+                return Position(new_x, y)
+        elif direction is Direction.WEST:
+            new_x = x - 1
+            if new_x >= self.size[0] or new_x <=0:
+                return starting_position
+            else:
+                return Position(new_x, y)
