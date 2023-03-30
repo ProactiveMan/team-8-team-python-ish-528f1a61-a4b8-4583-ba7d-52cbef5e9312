@@ -36,6 +36,9 @@ class GameMap:
 
     def get_postions(self):
         return self.positions
+    
+    def get_total_positions(self):
+        return self.position_count
 
     def is_valid_position(self, position: Position) -> bool:
         pass

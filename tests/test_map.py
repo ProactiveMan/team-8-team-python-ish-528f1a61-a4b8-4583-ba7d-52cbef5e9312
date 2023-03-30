@@ -17,3 +17,8 @@ class TestMap(TestCase):
         positions = testmap.get_postions()
         for pos in positions:
             self.assertIsInstance(pos, Position)
+    
+    def test_get_total_positions(self):
+        testmap = GameMap()
+        total_positions = testmap.get_total_positions()
+        self.assertEqual(total_positions, 100)
