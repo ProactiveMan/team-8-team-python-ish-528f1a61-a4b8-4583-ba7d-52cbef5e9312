@@ -4,18 +4,18 @@ Test Template     Move character
 Library           MoveLibrary.py
 
 *** Test Cases ***         StartingX     StartingY     StartingMoveCount     Direction     EndingX     EndingY     EndingMoveCount
-Move in middle of board    5             5             0                     EAST          6           5           1
-Move in middle of board    5             5             1                     WEST          4           5           2
-Move in middle of board    5             5             1                     NORTH         5           4           2
-Move in middle of board    5             5             1                     SOUTH         5           6           2
-Move on t-l of board       0             0             0                     WEST          0           0           1
-Move on t-l of board       0             0             0                     EAST          1           0           1
-Move on t-l of board       0             0             0                     NORTH         0           0           1
-Move on t-l of board       0             0             0                     SOUTH         0           1           1
-Move on b-r of board       9             9             0                     EAST          9           9           1
-Move on b-r of board       9             9             0                     WEST          8           9           1
-Move on b-r of board       9             9             0                     NORTH         9           8           1
-Move on b-r of board       9             9             0                     SOUTH         9           9           1
+Move in middle of boardE   5             5             0                     EAST          6           5           1
+Move in middle of boardW   5             5             1                     WEST          4           5           2
+Move in middle of boardN   5             5             1                     NORTH         5           4           2
+Move in middle of boardS   5             5             1                     SOUTH         5           6           2
+Move on t-l of boardW      0             0             0                     WEST          0           0           1
+Move on t-l of boardE      0             0             0                     EAST          1           0           1
+Move on t-l of boardN      0             0             0                     NORTH         0           0           1
+Move on t-l of boardS      0             0             0                     SOUTH         0           1           1
+Move on b-r of boardE      9             9             0                     EAST          9           9           1
+Move on b-r of boardW      9             9             0                     WEST          8           9           1
+Move on b-r of boardN      9             9             0                     NORTH         9           8           1
+Move on b-r of boardS      9             9             0                     SOUTH         9           9           1
 
 
 *** Keywords ***
