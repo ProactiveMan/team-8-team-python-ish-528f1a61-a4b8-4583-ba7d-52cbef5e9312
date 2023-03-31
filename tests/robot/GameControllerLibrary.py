@@ -3,13 +3,13 @@ from levelup.controller import GameController
 
 class GameControllerLibrary:
     def initialize_controller(self):
-        pass
+        raise AssertionError("Not Implemented")
 
     def create_character_with_name(self, charactername):
-        pass
+        raise AssertionError("Not Implemented")
 
     def character_name_should_be(self, expected):
-        pass
+        raise AssertionError("Not Implemented")
 
     def number_of_map_positions_should_be(self, expected):
         raise AssertionError("Not implemented")

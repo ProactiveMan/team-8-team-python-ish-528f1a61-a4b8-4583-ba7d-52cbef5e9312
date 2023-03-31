@@ -36,9 +36,9 @@ class GameController:
         else:
             raise CharacterNotFoundException("Character not found")
 
-    def create_character(self, character_name: str) -> None:
-        if character_name is not None and character_name != "":
-            self.character = Character(character_name)
+    def create_character(self, name: str) -> None:
+        if name is not None and name != "":
+            self.character = Character(name)
         else:
             self.character = Character(DEFAULT_CHARACTER_NAME)
         self.status.character_name = self.character.name
