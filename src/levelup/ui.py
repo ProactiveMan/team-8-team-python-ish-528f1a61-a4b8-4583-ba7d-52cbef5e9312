@@ -1,4 +1,5 @@
 import logging
+import random
 from typing import Callable
 from levelup.controller import GameController
 from levelup.map import Direction
