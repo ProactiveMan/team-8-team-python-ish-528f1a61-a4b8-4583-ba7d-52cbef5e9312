@@ -3,6 +3,7 @@ from typing import Callable
 from levelup.controller import GameController
 from levelup.map import Direction
 from levelup.character import InvalidMoveException
+from levelup.prompts import LevelUpPrompts
 
 VALID_DIRECTIONS = [x.value for x in Direction]
 
@@ -38,6 +39,7 @@ class GameApp:
                 print(f"You cannot move {direction}")
             else:
                 print(f"You moved {direction.name}")
+                print(random.choice(LevelUpPrompts))
             print(self.controller.status)
 
     def start(self):
