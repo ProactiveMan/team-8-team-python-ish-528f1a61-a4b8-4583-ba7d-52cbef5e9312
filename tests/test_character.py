@@ -14,7 +14,7 @@ class TestCharacter(TestCase):
 
     def test_get_name_default(self):
          FakeCharacter = Character(name=None)
-         self.assertEqual(FakeCharacter.get_name(), "Character") 
+         self.assertEqual(FakeCharacter.get_name(), "Shoresy") 
 
     def test_get_name_Shorsey(self):
          FakeCharacter = Character(name="Shorsey")

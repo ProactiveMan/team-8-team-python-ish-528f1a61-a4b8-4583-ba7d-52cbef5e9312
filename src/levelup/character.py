@@ -1,7 +1,7 @@
 from levelup.position import Position
 from levelup.map import GameMap, Direction
 
-DEFAULT_CHARACTER_NAME = "Character"
+DEFAULT_CHARACTER_NAME = "Shoresy"
 
 
 class InvalidMoveException(Exception):
