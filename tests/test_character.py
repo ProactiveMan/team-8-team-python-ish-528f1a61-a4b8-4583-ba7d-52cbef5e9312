@@ -35,3 +35,8 @@ class TestCharacter(TestCase):
         pos = FakeCharacter.get_position()
         self.assertIsInstance(pos,Position)
     
+    def test_move_valid_destination(self):   
+        FakeCharacter = Character(name="Shorsey")
+        FakeMap = GameMap()
+        NewPos = FakeMap.calculate_position(Position(0,0),Direction.SOUTH)
+        self.assertIsInstance(NewPos,Position)

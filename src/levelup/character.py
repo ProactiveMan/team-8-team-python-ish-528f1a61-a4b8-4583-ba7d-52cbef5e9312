@@ -30,4 +30,5 @@ class Character:
         return self.position
 
     def move(self, direction: Direction):
-        pass
+        self.position = self.map.calculate_position(self.position, direction)
+
