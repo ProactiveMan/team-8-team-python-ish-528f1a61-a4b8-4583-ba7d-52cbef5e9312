@@ -20,16 +20,9 @@ class GameMap:
         self.create_positions()
 
     def create_positions(self) -> None:
-        # Create pos array
-        x_axis = self.size[0]
-        y_axis = self.size[1]
-
         self.positions = []
-        x_positions = [x for x in range(x_axis)]
-        y_positions = [y for y in range(y_axis)]
-        
-        for x in x_positions:
-            for y in y_positions:
+        for x in range(self.size[0]):
+            for y in range(self.size[1]):
                 self.positions.append(Position(x, y))
         
         self.position_count = len(self.positions)
@@ -52,26 +45,16 @@ class GameMap:
     ) -> Position:
         x, y = starting_position.coordinates
         if direction is Direction.NORTH:
-            new_y = y - 1
-            if new_y >= self.size[1] or new_y <=0:
-                return starting_position
-            else:
-                return Position(x, new_y)
+            y -= 1
         elif direction is Direction.SOUTH:
-            new_y = y + 1
-            if new_y >= self.size[1] or new_y <=0:
-                return starting_position
-            else:
-                return Position(x, new_y)
+            y += 1
         elif direction is Direction.EAST:
-            new_x = x + 1
-            if new_x >= self.size[0] or new_x <=0:
-                return starting_position
-            else:
-                return Position(new_x, y)
+            x += 1
         elif direction is Direction.WEST:
-            new_x = x - 1
-            if new_x >= self.size[0] or new_x <=0:
-                return starting_position
-            else:
-                return Position(new_x, y)
+            x -= 1
+        
+        new_position = Position(x, y)
+        if self.is_valid_position(new_position):
+            return new_position
+        else:
+            return starting_position
