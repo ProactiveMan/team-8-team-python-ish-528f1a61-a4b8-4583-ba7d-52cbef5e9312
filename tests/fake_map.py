@@ -1,4 +1,4 @@
-from levelup.map import GameMap
+from levelup.map import GameMap, Direction
 from levelup.position import Position
 
 class FakeMap(GameMap):
